@@ -1,3 +1,16 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build outputs
+dist/
+dist-ssr/
+build/
+
+# Git submodules / clone scratch folders
+aniso-repo/
+
 # Logs
 logs
 *.log
@@ -7,12 +20,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Local environment files
 *.local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Editor directories and files
+# Editor & OS files
 .vscode/*
 !.vscode/extensions.json
 .idea
