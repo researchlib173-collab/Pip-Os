@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   CUSTOM INSTALLED FONT FACES: CHILD-LIKE & SEMI-SPOOKY
+   ========================================================================= */
+
+/* 1. Child-like playful font */
+@font-face {
+  font-family: 'Bubblegum';
+  src: url('/fonts/Bubblegum.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Semi-spooky whimsical pumpkin retro font */
+@font-face {
+  font-family: 'RetroPumkin';
+  src: url('/fonts/RetroPumkin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. Semi-spooky playful gothic theme font */
+@font-face {
+  font-family: 'SpookyTheme';
+  src: url('/fonts/SpookyTheme.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 4. Retro 90s OS arcade / digital telemetry font */
+@font-face {
+  font-family: 'Lonewarc';
+  src: url('/fonts/Lonewarc.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom utility classes for our custom fonts */
+.font-bubblegum {
+  font-family: 'Bubblegum', 'Comic Neue', cursive, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.font-spooky {
+  font-family: 'SpookyTheme', 'Fredoka', cursive, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-pumkin {
+  font-family: 'RetroPumkin', 'Fredoka', cursive, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-lonewarc {
+  font-family: 'Lonewarc', 'Courier Prime', monospace;
+  letter-spacing: 0.06em;
+}
+
+@layer base {
+  body {
+    font-family: 'RetroPumkin', 'Courier Prime', Courier, monospace;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'SpookyTheme', 'Fredoka', cursive, sans-serif;
+  }
+}
+
+/* Authentic 90s retro scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ede7df;
+  border-left: 1px solid #403b38;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dfd7ce;
+  border: 2px solid;
+  border-color: #ffffff #5c4033 #5c4033 #ffffff;
+}
+
+::-webkit-scrollbar-button {
+  background: #dfd7ce;
+  border: 1px solid;
+  border-color: #ffffff #403b38 #403b38 #ffffff;
+  height: 14px;
+}
