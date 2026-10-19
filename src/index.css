@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
 /* =========================================================================
-   CUSTOM INSTALLED FONT FACES: CHILD-LIKE & SEMI-SPOOKY
+   CUSTOM INSTALLED FONT FACES: CHILD-LIKE, SEMI-SPOOKY & PIXEL ART
    ========================================================================= */
 
-/* 1. Child-like playful font */
 @font-face {
   font-family: 'Bubblegum';
   src: url('/fonts/Bubblegum.ttf') format('truetype');
@@ -13,7 +12,6 @@
   font-display: swap;
 }
 
-/* 2. Semi-spooky whimsical pumpkin retro font */
 @font-face {
   font-family: 'RetroPumkin';
   src: url('/fonts/RetroPumkin.otf') format('opentype');
@@ -22,7 +20,6 @@
   font-display: swap;
 }
 
-/* 3. Semi-spooky playful gothic theme font */
 @font-face {
   font-family: 'SpookyTheme';
   src: url('/fonts/SpookyTheme.otf') format('opentype');
@@ -31,7 +28,6 @@
   font-display: swap;
 }
 
-/* 4. Retro 90s OS arcade / digital telemetry font */
 @font-face {
   font-family: 'Lonewarc';
   src: url('/fonts/Lonewarc.ttf') format('truetype');
@@ -40,7 +36,21 @@
   font-display: swap;
 }
 
-/* Custom utility classes for our custom fonts */
+/* Pixel Art Fonts */
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+  letter-spacing: -0.05em;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-silkscreen {
+  font-family: 'Silkscreen', monospace;
+  letter-spacing: 0.05em;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .font-bubblegum {
   font-family: 'Bubblegum', 'Comic Neue', cursive, sans-serif;
   letter-spacing: 0.03em;
@@ -61,15 +71,118 @@
   letter-spacing: 0.06em;
 }
 
+/* =========================================================================
+   PIXEL ART RENDERING & 90s CRT TECHNIQUES
+   ========================================================================= */
+
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Stepped Pixel Border Frame (NES/SNES/90s OS style) */
+.pixel-border {
+  box-shadow: 
+    0 -3px 0 0 #3a2e37,
+    0 3px 0 0 #3a2e37,
+    -3px 0 0 0 #3a2e37,
+    3px 0 0 0 #3a2e37,
+    inset -3px -3px 0 0 #9e9389,
+    inset 3px 3px 0 0 #ffffff;
+}
+
+.pixel-border-berry {
+  box-shadow: 
+    0 -3px 0 0 #5c2035,
+    0 3px 0 0 #5c2035,
+    -3px 0 0 0 #5c2035,
+    3px 0 0 0 #5c2035,
+    inset -3px -3px 0 0 #7a2845,
+    inset 3px 3px 0 0 #d9688d;
+}
+
+.pixel-border-gold {
+  box-shadow: 
+    0 -3px 0 0 #785a15,
+    0 3px 0 0 #785a15,
+    -3px 0 0 0 #785a15,
+    3px 0 0 0 #785a15,
+    inset -3px -3px 0 0 #c29832,
+    inset 3px 3px 0 0 #ffebb0;
+}
+
+/* Pixel Buttons with tactile 3D compression */
+.pixel-btn {
+  image-rendering: pixelated;
+  box-shadow: 
+    inset -2.5px -2.5px 0 0 #4a453f,
+    inset 2.5px 2.5px 0 0 #ffffff;
+}
+
+.pixel-btn:active {
+  box-shadow: 
+    inset 2.5px 2.5px 0 0 #4a453f,
+    inset -2.5px -2.5px 0 0 #ffffff;
+  transform: translate(1px, 1px);
+}
+
+.pixel-btn-berry {
+  background-color: #a34063;
+  color: #ffffff;
+  box-shadow: 
+    inset -2.5px -2.5px 0 0 #591d33,
+    inset 2.5px 2.5px 0 0 #e88aa8;
+}
+
+.pixel-btn-berry:active {
+  box-shadow: 
+    inset 2.5px 2.5px 0 0 #591d33,
+    inset -2.5px -2.5px 0 0 #e88aa8;
+  transform: translate(1px, 1px);
+}
+
+/* CRT Screen Scanlines */
+.crt-scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.18) 50%,
+    rgba(0, 0, 0, 0.18)
+  );
+  background-size: 100% 4px;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 80;
+}
+
+/* Retro Pixel Dither Patterns */
+.bg-dither-night {
+  background-color: #1e1a29;
+  background-image: 
+    radial-gradient(#3a324f 1.5px, transparent 1.5px),
+    radial-gradient(#2d253d 1.5px, #1e1a29 1.5px);
+  background-size: 8px 8px, 16px 16px;
+  background-position: 0 0, 4px 4px;
+}
+
+.bg-dither-day {
+  background-color: #fff8f1;
+  background-image: 
+    radial-gradient(#e5d5c5 1.5px, transparent 1.5px),
+    radial-gradient(#d4c0ad 1.5px, #fff8f1 1.5px);
+  background-size: 8px 8px, 16px 16px;
+  background-position: 0 0, 4px 4px;
+}
+
 @layer base {
   body {
     font-family: 'RetroPumkin', 'Courier Prime', Courier, monospace;
     user-select: none;
     -webkit-user-select: none;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'SpookyTheme', 'Fredoka', cursive, sans-serif;
+    -webkit-font-smoothing: none;
   }
 }
 
@@ -81,7 +194,7 @@
 
 ::-webkit-scrollbar-track {
   background: #ede7df;
-  border-left: 1px solid #403b38;
+  border-left: 2px solid #403b38;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -92,7 +205,7 @@
 
 ::-webkit-scrollbar-button {
   background: #dfd7ce;
-  border: 1px solid;
+  border: 2px solid;
   border-color: #ffffff #403b38 #403b38 #ffffff;
   height: 14px;
 }
